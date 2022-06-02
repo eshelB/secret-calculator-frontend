@@ -183,9 +183,6 @@ class App extends Component {
           alert(`Transaction ${txHashEnd} failed: ${tx.jsonLog.generic_err?.msg || tx.jsonLog.parse_err?.msg}`);
           return;
         } else {
-          // Ideally we would display the result of the calculation and not the status of the transaction.
-          // Unfortunately, getting the result of a tx is not supported by secretJS right now.
-          // The result can still be seen in the History section
           const resultString = fromUtf8(tx.data[0]);
           console.log("result in tx data:", resultString);
           const resultNumber = resultString.slice(1, -1);
